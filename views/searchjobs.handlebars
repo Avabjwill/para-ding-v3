@@ -5,6 +5,7 @@
     <p>No jobs found matching {{search}}!</p>
   </div>
 {{/if}}
+<<<<<<< HEAD
 <div class="text-center">
   <h2>{{name}}</h2>
   <p>{{{applied}}}</p>
@@ -18,3 +19,18 @@
     <button class="btn btn-primary">Fund this Project!</button>
   </p>
 </div>
+=======
+
+<h3 class="page-title">Jobs Found "{{search}}":</h3>
+{{#each job}}
+<section>
+    <a href="/job/{{id}}">
+        <div class="row"
+          <h4 class="col s12 l7"><span style="font-size: 1em">
+          <i class="{{link.class}}"></i>
+        </span>{{name}}</h4>
+        </div>
+    </a>
+</section> 
+{{/each}}
+>>>>>>> 033211770f407d04cc01d3ffeaf0e7779acd1f07
