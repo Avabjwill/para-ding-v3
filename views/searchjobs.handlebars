@@ -2,20 +2,19 @@
   <header class="col s12">
   </header>
   <div class="col s12 center"> 
-    <p>No jobs found within {{search}}!</p>
+    <p>No jobs found matching {{search}}!</p>
   </div>
 {{/if}}
-
-<h3 class="page-title">Jobs Found "{{search}}":</h3>
-{{#each job}}
-<section>
-    <a href="/tools/{{id}}">
-        <div class="row tool-and-owner indigo-text text-darken-2">
-          <h4 class="col s12 l7 tool-name"><span style="font-size: 1em">
-          <i class="{{category.class}}"></i>
-        </span>{{name}}</h4>
-          <p class="col s12 l5 tool-owner">posted by {{user.name}} in {{user.neighborhood.name}}</p>
-        </div>
-    </a>
-</section> 
-{{/each}}
+<div class="text-center">
+  <h2>{{name}}</h2>
+  <p>{{{applied}}}</p>
+  <p>{{link}}</p>
+  <p>
+    <span for="img" aria-label="money"></span>
+    <span class="dollar-amount">{{format_amount needed_funding}}</span>
+    needed
+  </p>
+  <p>
+    <button class="btn btn-primary">Fund this Project!</button>
+  </p>
+</div>

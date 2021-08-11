@@ -10,12 +10,21 @@
     </div>
 </div>
 
-<div class="row">
-    <div class="center align">
-        <h3 class="col s12 l7 app-title"><span style="font-size: 3em"></span>
-        <i class="{{job..class}}"></i>
-        </span>{{tool.name}}</h4>
-      <p class="col s12 p-size">{{tool.description}}</p>
-    </div> 
+{{#if job.length}}
+  <div class="col-md-6 job-list">
+    <h3>Saved Applications:</h3>
+
+    {{#each job as |Job|}}
+    <div class="row mb-2">
+      <div class="col-md-8">
+        <h4><a href="/job/{{job.id}}">{{job.name}}</a></h4>
+      </div>
+      <div class="col-md-4">
+        <button class="btn btn-sm btn-danger" data-id="{{job.id}}">DELETE</button>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  {{/if}}
 </div>
 <script src="./js/profile.js"></script>
