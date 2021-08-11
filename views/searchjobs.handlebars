@@ -4,33 +4,18 @@
   <div class="col s12 center"> 
     <p>No jobs found matching {{search}}!</p>
   </div>
+
 {{/if}}
-<<<<<<< HEAD
 <div class="text-center">
   <h2>{{name}}</h2>
   <p>{{{applied}}}</p>
   <p>{{link}}</p>
   <p>
-    <span for="img" aria-label="money"></span>
-    <span class="dollar-amount">{{format_amount needed_funding}}</span>
-    needed
+    <span for=".img" aria-label="Jobs"></span>
+    <span class="jobs-available">{{format_available applied}}</span>
   </p>
   <p>
-    <button class="btn btn-primary">Fund this Project!</button>
+    <button class="btn btn-primary">Save this Job!</button>
   </p>
 </div>
-=======
-
-<h3 class="page-title">Jobs Found "{{search}}":</h3>
-{{#each job}}
-<section>
-    <a href="/job/{{id}}">
-        <div class="row"
-          <h4 class="col s12 l7"><span style="font-size: 1em">
-          <i class="{{link.class}}"></i>
-        </span>{{name}}</h4>
-        </div>
-    </a>
-</section> 
-{{/each}}
->>>>>>> 033211770f407d04cc01d3ffeaf0e7779acd1f07
+<script src="./js/search.js"></script>

@@ -31,7 +31,7 @@
         </nav>
         <div class="header">
             <div class="header_left">
-                <div class="search_box">
+                <div class="search_box search">
                     <i class="bi bi-search"></i>
                     <input type="text" class="search_input" value="Search">
                 </div>
@@ -54,7 +54,7 @@
         <div class="header_right_2" style="border-left: 1px solid grey;">
             <div class="nav_link">
                 <div class="nav_icon">
-                    <img src="../assets/R.png" alt="non" style="height:30px;object-fit: contain;border-radius:50px; ;">
+                    <img src="../../public/imgs/R.png" alt="non" style="height:30px;object-fit: contain;border-radius:50px; ;">
                     <div class="nav_text dropdown drop">
                         <div class="dropdown">
                             <div id="myDropdown" class="dropdown-content">
@@ -76,10 +76,11 @@
       {{{ body }}}
     </main>
     <footer>
-        
+
     </footer>
     {{#if logged_in}}
      <script src="../../public/JS/logout.js"></script>
+     <script src="../../public/JS/search.js"></script>
     {{/if}}
 </body>
 
