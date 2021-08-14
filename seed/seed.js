@@ -13,6 +13,7 @@ const seedDatabase = async () => {
   const userJobs = await Job.bulkCreate(jobsData);
   console.log('\n...jobs sucessful..\n');
 
+  
   for (const user of userData) {
     await User.bulkCreate({
       ...user,

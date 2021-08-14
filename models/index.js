@@ -4,7 +4,7 @@ const User = require('./User');
 const Job = require('./Job');
 
 User.hasMany(Job, {
-    foreignKey: 'job_id',
+    foreignKey: 'job_id'
 });
 
 Job.belongsTo(User, {

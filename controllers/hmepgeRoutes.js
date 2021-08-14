@@ -1,6 +1,7 @@
-const router = require('express').router();
+const router = require('express').Router();
 const { User, Applied, jobsData } = require('../models');
 const sequelize = require('sequelize');
+const withAuth = require("../utils/auth")
 
 //https://www.tabnine.com/code/javascript/functions/express/Router/get
 router.get('/', async (req, res) => {
@@ -16,11 +17,11 @@ router.get('/', async (req, res) => {
       });
   
       // Serialize data so the template can read it
-      const projects = projectData.map((project) => project.get({ plain: true }));
+      const jobs = jobData.map((job) => job.get({ plain: true }));
   
       // Pass serialized data and session flag into template
       res.render('homepage', { 
-        projects, 
+        jobs, 
         logged_in: req.session.logged_in 
       });
     } catch (err) {
@@ -28,9 +29,9 @@ router.get('/', async (req, res) => {
     }
   });
   
-  router.get('/project/:id', async (req, res) => {
+  router.get('/job/:id', async (req, res) => {
     try {
-      const projectData = await Project.findByPk(req.params.id, {
+      const jobData = await job.findByPk(req.params.id, {
         include: [
           {
             model: User,
@@ -39,10 +40,10 @@ router.get('/', async (req, res) => {
         ],
       });
   
-      const project = projectData.get({ plain: true });
+      const job = jobData.get({ plain: true });
   
-      res.render('project', {
-        ...project,
+      res.render('job', {
+        ...job,
         logged_in: req.session.logged_in
       });
     } catch (err) {
@@ -56,7 +57,7 @@ router.get('/', async (req, res) => {
       // Find the logged in user based on the session ID
       const userData = await User.findByPk(req.session.user_id, {
         attributes: { exclude: ['password'] },
-        include: [{ model: Project }],
+        include: [{ model: job }],
       });
   
       const user = userData.get({ plain: true });
