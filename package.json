@@ -29,6 +29,7 @@
     "express-session": "^1.17.2",
     "mysql2": "^2.3.0",
     "nodemailer": "^6.6.3",
+    "prettier": "^1.5.1",
     "sequelize": "^6.6.5"
   }
 }

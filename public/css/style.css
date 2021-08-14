@@ -16,7 +16,6 @@ body {
     justify-content: space-between;
     align-items: center;
     background-color: white;
-    z-index:1;
 }
 
 .header_left{
@@ -273,7 +272,6 @@ img{
     }
   }
   
-  /* big landscape tablets, laptops, and desktops */
   @media screen and (min-width: 992px) {
     .owner {
       margin-top: 48px;
